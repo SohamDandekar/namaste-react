@@ -2,4 +2,6 @@ const LOGO_URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjDMszOe
 
 const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
 
-export {LOGO_URL,CDN_URL};
+const MENU_URL = "https://namastedev.com/api/v1/listRestaurantMenu/"
+
+export {LOGO_URL, CDN_URL, MENU_URL};
