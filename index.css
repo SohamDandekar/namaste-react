@@ -90,3 +90,8 @@ a:link, a:visited, a:hover, a:active {
     height: 30px;
     margin: 5px;
 }
+
+.user-card{
+    padding: 10px;
+    border: 1px solid black ;
+}
