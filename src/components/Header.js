@@ -9,20 +9,20 @@ const Header = () => {
     const offlineStatus = useOfflineStatus();
 
     return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo"
+        <div className="flex p-4 items-center justify-between bg-green-200 shadow-lg h-32">
+            <div className="w-28">
+                <img className="m-1"
                      src={LOGO_URL}/>
             </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Offine Status: {offlineStatus ? "🟢" : "🔴"}</li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About Us</Link></li>
-                    <li><Link to="/contact">Contact Us</Link></li>
-                    <li><Link to="/grocery">Grocery</Link></li>
-                    <li>Cart</li>
-                    <button className="login-btn" onClick={() => {
+            <div className="flex m-4 p-4 items-center">
+                <ul className="flex">
+                    <li className="m-4 p-4">Offine Status: {offlineStatus ? "🟢" : "🔴"}</li>
+                    <li className="m-4 p-4"><Link to="/">Home</Link></li>
+                    <li className="m-4 p-4"><Link to="/about">About Us</Link></li>
+                    <li className="m-4 p-4"><Link to="/contact">Contact Us</Link></li>
+                    <li className="m-4 p-4"><Link to="/grocery">Grocery</Link></li>
+                    <li className="m-4 p-4">Cart</li>
+                    <button className="p-4 m-4" onClick={() => {
                         loginBtnText === "Login" ? setLoginBtnText("Logout"): 
                         setLoginBtnText("Login");
                     }}>{loginBtnText}</button>

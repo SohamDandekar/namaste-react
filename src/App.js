@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { lazy, Suspense } from "react";
 import Shimmer from "./components/Shimmer";
+import "../index.css";
 
 
 const AppLayout = () => {

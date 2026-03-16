@@ -34,11 +34,11 @@ const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="searchBar" value={searchText} 
+            <div className="flex items-center">
+                <div className="m-2">
+                    <input type="text" className="m-4 border border-solid border-black" value={searchText} 
                     onChange={(e) => setSearchText(e.target.value)} />
-                    <button className="search-btn" onClick={() => {
+                    <button className="px-4 py-1 m-4 bg-amber-200 rounded-md" onClick={() => {
                         const filteredList = listOfRestaurants.filter((res)=>{
                             return res.info.name.toLowerCase().includes(searchText.toLowerCase());
                         });
@@ -47,7 +47,7 @@ const Body = () => {
                         Search
                     </button>
                 </div>
-                <button className="filter-btn"
+                <button className="px-4 py-1 m-4 bg-amber-200 rounded-md"
                     onClick={() => {
                         const filteredList = filteredListOfRestaurants.filter(res => res.info.avgRating >= 4);
                         setfilteredListOfRestaurants(filteredList);
@@ -55,12 +55,12 @@ const Body = () => {
                 >
                     Top Rated Restaurants
                 </button>
-                <button className="clear-filter-btn" onClick={()=>{
+                <button className="px-4 py-1 m-4 bg-amber-200 rounded-md" onClick={()=>{
                     setfilteredListOfRestaurants(listOfRestaurants);
                     setSearchText("");
                 }}>Clear All Filters</button>
             </div>
-            <div className="res-container">
+            <div className="p-1 m-1 flex flex-wrap">
                 {
                 filteredListOfRestaurants.map((resCard) => (
                     <Link key={resCard.info.id} to={"/restaurants/"+resCard.info.id}><RestaurantCard resData={resCard}/></Link>
