@@ -6,17 +6,32 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Shimmer from "./components/Shimmer";
 import "../index.css";
+import UserContext from "./utils/UserContext";
 
 
 const AppLayout = () => {
+
+    const [userName, setUserName] = useState();
+
+    useEffect(()=>{
+        //Authentication Call
+        const data = {
+            name: "Randy Orton"
+        }
+        setUserName(data.name);
+    },[])
+
+
     return (
+        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
         <div className="app">
             <Header/>
             <Outlet/>
         </div>
+        </UserContext.Provider>
     );
 };
 

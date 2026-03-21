@@ -1,5 +1,6 @@
 import User from "./User";
 import { Component } from "react";
+import UserContext from "../utils/UserContext";
 
 class Contact extends Component {
   constructor(props){
@@ -20,6 +21,9 @@ class Contact extends Component {
       <div>
           <h1>Contact Us Page</h1>
           <User name={"Soham"} location={"Thane"}/>
+          <UserContext.Consumer>
+            {({loggedInUser}) => <h1 className="font-bold">{loggedInUser}</h1>}
+          </UserContext.Consumer>
       </div>
     );
   }
