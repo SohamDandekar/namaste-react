@@ -1,7 +1,17 @@
 import { CDN_URL } from "../utils/constant";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
 const ItemsList = ({items}) => {
-    console.log(items);
+
+    const dispatch = useDispatch();
+
+    const handleAddItem = (e,item) => {
+        // To stop event bubbling
+        e.stopPropagation();
+        dispatch(addItem(item));
+    }
+
     return (
         <div>
             {items.map((item)=>(
@@ -15,7 +25,7 @@ const ItemsList = ({items}) => {
                 </div>
                 <div className="w-3/12">
                 <div className="absolute">
-                    <button className="bg-gray-100 text-black mx-0 my-[94px] p-2 shadow-lg rounded-lg">
+                    <button className="bg-gray-100 text-black mx-0 my-[94px] p-2 shadow-lg rounded-lg" onClick={(e) => handleAddItem(e, item)}>
                         Add +
                     </button>
                 </div>
