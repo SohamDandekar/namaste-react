@@ -1,0 +1,28 @@
+{
+    "info": {
+        "id": "345678",
+        "name": "Green Bites",
+        "cloudinaryImageId": "e0839ff574213e6f35b3899ebf1fc597",
+        "locality": "Residency Road",
+        "areaName": "South Zone",
+        "costForTwo": "₹250 for two",
+        "cuisines": [
+            "Healthy Food",
+            "Salads",
+            "Vegan"
+        ],
+        "avgRating": 4.7,
+        "avgRatingString": "4.7",
+        "totalRatingsString": "8K+ ratings",
+        "veg": true,
+        "sla": {
+            "deliveryTime": 20,
+            "lastMileTravel": 1.5,
+            "slaString": "20 mins"
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "30% OFF",
+            "subHeader": "UPTO ₹75"
+        }
+    }
+}

@@ -14,7 +14,7 @@ const Body = () => {
     const{loggedInUser, setUserName} = useContext(UserContext);
 
     const RestaurantCardVeg = withVegLabel();
-    console.log(listOfRestaurants);
+    //console.log(listOfRestaurants);
 
     useEffect(() => {
         fetchData();
@@ -42,7 +42,7 @@ const Body = () => {
         <div className="body">
             <div className="flex items-center">
                 <div className="m-2">
-                    <input type="text" className="m-4 border border-solid border-black" value={searchText} 
+                    <input data-testid="searchBox" type="text" className="m-4 border border-solid border-black" value={searchText} 
                     onChange={(e) => setSearchText(e.target.value)} />
                     <button className="px-4 py-1 m-4 bg-amber-200 rounded-md" onClick={() => {
                         const filteredList = listOfRestaurants.filter((res)=>{
@@ -55,7 +55,7 @@ const Body = () => {
                 </div>
                 <button className="px-4 py-1 m-4 bg-amber-200 rounded-md"
                     onClick={() => {
-                        const filteredList = filteredListOfRestaurants.filter(res => res.info.avgRating >= 4);
+                        const filteredList = filteredListOfRestaurants.filter(res => res.info.avgRating >= 4.2);
                         setfilteredListOfRestaurants(filteredList);
                     }}
                 >
@@ -66,6 +66,7 @@ const Body = () => {
                     setSearchText("");
                 }}>Clear All Filters</button>
                 <div className="m-2">
+                    Username:
                     <input type="text" className="m-4 border border-solid border-black" value={loggedInUser} 
                     onChange={(e) => setUserName(e.target.value)} />
                 </div>
